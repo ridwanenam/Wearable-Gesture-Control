@@ -1,0 +1,18 @@
+.pio
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch
+
+.venv/
+
+# Abaikan hanya folder sampah hasil build Flutter
+flutter_application_1/build/
+flutter_application_1/android/.gradle/
+flutter_application_1/android/app/build/
+flutter_application_1/.dart_tool/
+flutter_application_1/.tool/
+flutter_application_1/.idb/
+flutter_application_1/.pub-cache/
+flutter_application_1/.pub/
+
