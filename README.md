@@ -29,7 +29,39 @@ This repository hosts the source code for both the **Arduino firmware Core** and
 ---
 
 ## 🛠️ System Architecture & Data Path
-[LSM6DSOX IMU]│ (Raw Y-Axis Acceleration @ 104 Hz / 10ms loop)▼[Arduino RP2040 Core] ──► Localized Heuristic FSM (Filters Muscle Recoil Ripples)││ (Low-Overhead BLE Notification String Token)▼[Flutter Mobile Client] ──► Tab-Aware Dispatcher (Context Routing Block)│├──► Tab 0: Telemetry Stream Console (Configuration Mute Floor)├──► Tab 1: WebSocket Presentation Slide Mirroring Core (Port 8080)└──► Tab 2: Custom Shutter & Lens Zoom Viewfinder HUD Camera
+
+```text
+┌──────────────────────────────────────────────┐
+│              LSM6DSOX IMU                   │
+│  Raw Y-Axis Acceleration                    │
+│  104 Hz / 10 ms Processing Loop             │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│           Arduino RP2040 Core               │
+│  Localized Heuristic FSM                    │
+│  Filters Muscle Recoil Ripples              │
+└──────────────────────┬───────────────────────┘
+                       │
+                       │ BLE Notification
+                       │ String Token
+                       ▼
+┌──────────────────────────────────────────────┐
+│             Flutter Mobile Client           │
+│  Tab-Aware Dispatcher                       │
+│  Context Routing Block                      │
+├──────────────────────────────────────────────┤
+│ Tab 0 │ Telemetry Stream Console             │
+│       │ Configuration Mute Floor             │
+├──────────────────────────────────────────────┤
+│ Tab 1 │ WebSocket Presentation Slide         │
+│       │ Mirroring Core (Port 8080)           │
+├──────────────────────────────────────────────┤
+│ Tab 2 │ Custom Shutter & Lens Zoom           │
+│       │ Viewfinder HUD Camera                │
+└──────────────────────────────────────────────┘
+```
 
 ---
 
