@@ -12,3 +12,6 @@ A wearable interaction system that enables hands-free multi-tab control using wr
 
 
 ---
+
+**Associated with:** <br>
+► PUI-PT Intelligent Sensing-IoT
